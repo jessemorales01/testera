@@ -886,11 +886,11 @@ SoulWarReflectDamageMap = {
 }
 
 local soulWarTaints = {
-	"taints-teleport", -- Taint 1
-	"taints-spawn", -- Taint 2
-	"taints-damage", -- Taint 3
-	"taints-heal", -- Taint 4
-	"taints-loss", -- Taint 5
+	"taint-teleport", -- Taint 1
+	"taint-spawn", -- Taint 2
+	"taint-damage", -- Taint 3
+	"taint-heal", -- Taint 4
+	"taint-loss", -- Taint 5
 }
 
 GreedMonsters = {

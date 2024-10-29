@@ -23,13 +23,13 @@ function soul_war_entrances.onStepIn(creature, item, position, fromPosition)
 	end
 
 	-- Check if player has access to teleport from Flickering Soul npc: "hi/task/yes"
-	local soulWarQuest = player:soulWarQuestKV()
-	if not soulWarQuest:get("teleport-access") then
-		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Your soul does not yet resonate with the frequency required to enter here.")
-		player:teleportTo(fromPosition, true)
-		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-		return
-	end
+	--local soulWarQuest = player:soulWarQuestKV()
+	--if not soulWarQuest:get("teleport-access") then
+	--	player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "Your soul does not yet resonate with the frequency required to enter here.")
+	--	player:teleportTo(fromPosition, true)
+	--	player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+	--	return
+	--end
 
 	for position, destination in pairs(positionsTable) do
 		if position == player:getPosition() then
@@ -111,9 +111,9 @@ function claustrophobicInfernoTeleports.onStepIn(creature, item, position, fromP
 	return true
 end
 
-for key, value in pairs(claustrophobicInfernoTeleportPositions) do
-	claustrophobicInfernoTeleports:position(key)
-end
+--for key, value in pairs(claustrophobicInfernoTeleportPositions) do
+--	claustrophobicInfernoTeleports:position(key)
+--end
 
 claustrophobicInfernoTeleports:register()
 
@@ -125,14 +125,14 @@ function goshnarSpiteEntrance.onStepIn(creature, item, position, fromPosition)
 		return false
 	end
 
-	local soulWarQuest = player:soulWarQuestKV()
-	local killCount = soulWarQuest:get("hazardous-phantom-death") or 0
-	if killCount < 20 then
-		player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You have killed " .. killCount .. " and need to kill 20 Hazardous Phantoms")
-		player:teleportTo(fromPosition, true)
-		player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
-		return false
-	end
+	--local soulWarQuest = player:soulWarQuestKV()
+	--local killCount = soulWarQuest:get("hazardous-phantom-death") or 0
+	--if killCount < 20 then
+	--	player:sendTextMessage(MESSAGE_EVENT_ADVANCE, "You have killed " .. killCount .. " and need to kill 20 Hazardous Phantoms")
+	--	player:teleportTo(fromPosition, true)
+	--	player:getPosition():sendMagicEffect(CONST_ME_TELEPORT)
+	--	return false
+	--end
 
 	if position == SoulWarQuest.goshnarSpiteEntrancePosition.fromPos then
 		player:teleportTo(SoulWarQuest.goshnarSpiteEntrancePosition.toPos)
